@@ -79,4 +79,13 @@ void foo(int n = 75, char c); // not OK
 // TODO: Copy from TUTORIAL Slides
 ```
 
+```cpp
+int main( int argc, char * argv[] )
+
+// argc is the number of arguments
+// argv[0] is the name of the program
+// argv[1] is the first argument
+// argv[2] is the second argument
+// argv[>2] are the rest of the arguments
+```
 
