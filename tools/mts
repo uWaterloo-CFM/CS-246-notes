@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Make Test Suite (mts)
+wd='pwd'
+
+if [ ${#} -ne 0 ]; then
+    qn_num=${1}
+else
+    echo "Enter Question #: "
+    read qn_num
+fi
+
+ls | egrep "*.\.args$|*.\.in$" | awk -F'.' '{print $1}' | uniq >  "$(${wd})/suiteq${qn_num}.txt"
+
+echo "Suite: suiteq${qn_num}"
+echo "Tests added: $(cat "$(${wd})/suiteq${qn_num}.txt" | wc -l)"
