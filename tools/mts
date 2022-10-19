@@ -14,3 +14,4 @@ ls | egrep "*.\.args$|*.\.in$" | awk -F'.' '{print $1}' | uniq >  "$(${wd})/suit
 
 echo "Suite: suiteq${qn_num}"
 echo "Tests added: $(cat "$(${wd})/suiteq${qn_num}.txt" | wc -l)"
+echo "Don't forget to zip [...].zip [*.in *.args ...]!"
