@@ -217,7 +217,7 @@ Node n = 5;
 
 ```cpp
 Node n = 5;
-Node g(6, nullptr);
+Node g {6, nullptr};
 g = 7; // Also implicitly calles Node(7)
 ```
 * Single argument constructors are used by the compiler to perform implicit conversions.
