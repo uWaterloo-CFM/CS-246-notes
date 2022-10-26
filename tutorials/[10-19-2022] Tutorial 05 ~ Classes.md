@@ -103,8 +103,59 @@ Monster::Monster() : name{"Monster"}, health{100} {}
         * DOES NOT set `variable = condition`
 
 ### Rvalue References
-* Copy from slides
+* Required for Move Constructors/Assignment (Move semantics)
+* Similar to lvalue references, but for rvalues
+* Designed to avoid needless copies by referencing a temporary value
+rather than storing it into a variable
+* An rvalue is something that can appear on the right side of an
+assignment (e.g 3+5, foo(), etc.)
+* Not really practical, effectively implemented for move semantics
+(covered next) and perfect forwarding (not covered in the course)
+
+**In a normal assignment**
+```cpp
+x = 3 + 5;
+```
+
+**The compiler does the following:**
+```
+int x;
+int temp = 3 + 5; // Creates a copy of x
+x = temp;
+```
+
+**With rvalue references, the compiler does the following:**
+```cpp
+int &&x;
+x = 3 + 5; -> temp = 8 // 3 + 5 is an rvalue
+x -> temp // temp is not deleted
+
+// so x refers to temp instead of copying it to x
+```
 
 ### Move Constructor
+* Used when you want to move all contents of one object into a new one
+* Meant to avoid copying data needlessly
+Usage: 
+```cpp
+Yakuza::Yakuza(Yakuza&& other){
+    delete boss;
+    name = other.name;
+    boss = other.boss;
+    other.boss = nullptr;
+}
+```
 
 ### Move Assignment Operator
+
+* Move data from one object to another
+* Again, trying to avoid copying data, just moving it
+* Don’t have to worry about deleting old data because other will
+automatically go out of scope
+Usage: 
+```cpp
+    Yakuza& operator=(Yakuza&& other){
+    swap(other); //using earlier def of swap
+    return *this;
+    }
+```
