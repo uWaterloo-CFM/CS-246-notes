@@ -134,7 +134,8 @@ int main() {
 * However, some classes don't admit meaningful defaults.
 ```cpp
 // ie:
-ifstream f;
+ifstream f; // correction Lecture 12: 
+//             ifstream does have a default constructor
 ofstream o;
 ```
 
