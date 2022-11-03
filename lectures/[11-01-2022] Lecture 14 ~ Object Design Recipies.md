@@ -262,3 +262,4 @@ void** BookArray; // frick it.
 * Observation
     * Novels, Compic Books, TextBooks are all **extensions** of some underlying Book type.
     * Conclusion: **Thursday** lecture
+    
