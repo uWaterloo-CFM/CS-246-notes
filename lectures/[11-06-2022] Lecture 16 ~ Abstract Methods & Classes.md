@@ -334,3 +334,7 @@ class Book {
 ```
 * Make it `protected` so my derived classes can use
     * Protected means derived classes can use fields and methods
+
+* What about `Book` objects, we can't copy those now
+    * Should they even exist?
+    * More in Lec 17..
