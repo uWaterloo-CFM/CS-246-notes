@@ -220,14 +220,14 @@ class Turtle {
 // implement overrides for drawShell instead of all of them
 //  Less Reused code!
 class RedTurtle: public Turtle {
-    public:
+    private:
         void drawShell() override {
             [A red shell]
         }
 };
 
 class GreenTurtle: public Turtle {
-    public:
+    private:
         void drawShell() override {
             [A green shell]
         }

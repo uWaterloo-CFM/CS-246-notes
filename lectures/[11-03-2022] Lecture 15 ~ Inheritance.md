@@ -140,12 +140,18 @@ class Novel: public Book {
 ### How objects are *actually* built
 1. **Before** (lies and deceit)
     i. Reserve Space for the object
+
     ii. Initialize the object's fields according to MIL
+
     iii. Run constructor body
+    
 2. **After** (the truth) - Inheritance
     i. Reserve Space for the object
+    
     ii. Before initializing fields, construct base **subobjects**
+
     iii. Now we can initialize the **base object's** fields according to MIL
+
     iv. Run constructor body
 
     * Here, **subobject** is the `Book` portion of `Novel`
